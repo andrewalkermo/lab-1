@@ -1,2 +1,4 @@
-/lista-1/*
-!/lista-1/*.cpp
+*.exe
+*.o
+!lista*/*.cpp
+!e

@@ -35,6 +35,7 @@ int busca(vector<int> v,vector<int>::iterator ini, vector<int>::iterator fim, in
         else {
             return meio;
         }
+        .
     }
     else if (*meio < x) {
         return busca (v, meio+1, fim, x);

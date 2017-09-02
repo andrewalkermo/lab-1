@@ -1,0 +1,30 @@
+#!/bin/bash
+
+echo "=============================================================="
+echo "Verificando se o Atom está instalado"
+echo "=============================================================="
+    if which -a "atom"
+    then
+        echo "Atom já está instalado."
+    else
+        echo "=============================================================="
+        echo "Baixando Atom"
+        echo "=============================================================="
+        wget https://atom.io/download/deb -O atom-amd64.deb
+        echo "=============================================================="
+        echo "Instalando Atom"
+        echo "=============================================================="
+        sudo apt-get install ./atom-amd64.deb
+    fi
+echo "=============================================================="
+echo "Copiando configuração do Atom"
+echo "=============================================================="
+    cp config.cson ~/.atom/
+    echo "Copiado com sucesso!"
+echo "=============================================================="
+echo "Instalando packages do Atom"
+echo "=============================================================="
+apm install --packages-file package.list
+# apm list --installed --bare > ./package.list
+apm upgrade --no-confirm
+
